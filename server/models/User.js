@@ -2,7 +2,7 @@ const mongoose = require('mongosoe')
 const bcrypt = require('bcrypt')
 
 const {Schema} = mongoose
-//to do: add application schemas here
+const appSchema = require('./Application')
 
 const userSchema = new Schema({
     username: {
@@ -30,7 +30,7 @@ const userSchema = new Schema({
         type: Schema.Types.String,
         required: true
     },
-    // to do: add application schemas here
+    applications: [appSchema]
 },
 {
     toJSON: {
